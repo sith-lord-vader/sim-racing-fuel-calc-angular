@@ -1,0 +1,30 @@
+.form-group {
+    color: #fff;
+}
+
+form > * {
+    display: block;
+    padding: 1rem 0;
+}
+
+.form-control {
+    color: #fff;
+    background: transparent;
+    transition-duration: 0.7s;
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.form-control:focus {
+    border-color: none;
+    box-shadow: rgba(0, 255, 255, 0.555) 0px 0px 2px 3px;
+}
+
+.form-control:valid {
+    border-color: none;
+    box-shadow: rgba(172, 255, 47, 0.555) 0px 0px 2px 3px;
+}
+
+.btn-aqua {
+    width: 100%;
+    background: linear-gradient(to right, #3fe0d0, #0080FF, #003152);
+}

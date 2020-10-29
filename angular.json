@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sim-racing-fuel-calc"
+    }
+  },
+  "defaultProject": "sim-racing-fuel-calc",
+  "cli": {
+    "analytics": "dbb806e8-d694-49e4-86c5-dde42739efb8"
+  }
 }

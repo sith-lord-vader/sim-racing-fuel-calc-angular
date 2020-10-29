@@ -1,0 +1,40 @@
+<div style="text-align: center; align-items: center;">
+    <h1 style="color: rgba(255, 255, 255, 0.712); padding-top: 1rem;"><img src="../../assets/Stripped_Logo.png" style="height: 3rem; margin-bottom: 0.7rem; margin-right: 1rem;"/>Sim Racing Fuel Calculator</h1>
+</div>
+<div>
+    <form [formGroup]="calcForm" (ngSubmit) = "onClickSubmit(calcForm.value)">
+        <div class="form-group">
+            <label for="lapTime"><i class="fa fas fa-stopwatch" style="margin-right: 1rem;"></i>Lap Time in Seconds</label>
+            <input type="number" class="form-control" step="0.1" id="lapTime" required name="lapTime" placeholder="Lap Time (s)"  formControlName="lapTime">
+        </div>
+        <div class="form-group">
+            <label for="fuelRate"><i class="fa fas fa-tint" style="margin-right: 1rem;"></i>Fuel Consumption Rate in Litres per Lap</label>
+            <input type="number" class="form-control" step="0.1" id="fuelRate" required name="fuelRate" placeholder="Fuel Rate (L/lap)"  formControlName="fuelRate">
+        </div>
+        <div class="form-group">
+            <label for="totalTime"><i class="fa fas fa-flag-checkered" style="margin-right: 1rem;"></i>Total Race Time in Minutes</label>
+            <input type="number" class="form-control" step="0.1" id="totalTime" required name="totalTime" placeholder="Total Time (mins)"  formControlName="totalTime">
+        </div>
+        <div class="form-group">
+            <label for="additionalLaps"><i class="fa fas fa-plus" style="margin-right: 1rem;"></i>Additional Laps for Backup Fuel</label>
+            <input type="number" class="form-control" step="0.1" id="additionalLaps" required name="additionalLaps" placeholder="Additional Laps"  formControlName="additionalLaps">
+        </div>
+        <div style="color: rgba(255, 255, 255, 0.678); font-size: large;">
+            <i class="fa fas fa-gas-pump" style="margin-right: 1rem;"></i>Fuel Required : <span style="color: white;"><b>{{fuelRequired}} L</b></span>
+        </div>
+       <button type="submit" class="btn btn-primary btn-aqua" style="font-size: 1rem;"><i class="fa fas fa-calculator" style="margin-right: 1rem;"></i>Do the math!</button>
+    </form>
+ </div>
+ <a href="https://sairyonodevs.in/" style="color: black;">
+     <div style="position: absolute; border-radius: 100%; height: 150px; width: 150px; background-color: yellow; top: -75px; left: -75px;">
+        <span><i class="fa fas fa-globe" style="position: absolute; bottom: 30.5px; right: 30.5px; font-size: 30px;"></i></span>
+     </div>
+ </a>
+
+ <div>
+    Would be a shame if you don't visit a site...Just kidding, please check out our site!!!
+ </div>
+
+ <footer class="text-center" style="position: absolute; bottom: 0; right: 0; left: 0;">
+     &copy;&nbsp;Abhishek Adhikari & Sandip Murmu | Sairyö No Developers
+ </footer>
