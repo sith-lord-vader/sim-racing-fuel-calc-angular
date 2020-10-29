@@ -8,14 +8,14 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class CalculatorComponent implements OnInit {
   calcForm;
-  fuelRequired = 0.0;
+  fuelRequired = "0.0";
 
   constructor() {
-    this.fuelRequired = 0.0;
+    this.fuelRequired = "0.0";
    }
 
   ngOnInit(): void {
-    this.fuelRequired = 0.0;
+    this.fuelRequired = "0.0";
     this.calcForm = new FormGroup({
       lapTime: new FormControl("", [Validators.required, Validators.minLength(1)]),
       fuelRate: new FormControl("", [Validators.required, Validators.minLength(1)]),
@@ -25,7 +25,7 @@ export class CalculatorComponent implements OnInit {
   }
   
   onClickSubmit(data) {
-    console.log(((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + 1) * parseFloat(data.fuelRate)).toPrecision(1));
-    this.fuelRequired = ((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + 1) * parseFloat(data.fuelRate));
+    console.log(((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + 1) * parseFloat(data.fuelRate)).toFixed(2));
+    this.fuelRequired = ((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + 1) * parseFloat(data.fuelRate)).toFixed(2);
   }
 }
