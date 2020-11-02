@@ -3,11 +3,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-calculator',
-  templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  selector: 'app-lap-calculator',
+  templateUrl: './lap-calculator.component.html',
+  styleUrls: ['./lap-calculator.component.css']
 })
-export class CalculatorComponent implements OnInit {
+export class LapCalculatorComponent implements OnInit {
+
   calcForm;
   fuelRequired = "0.0";
 
@@ -19,19 +20,18 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
     this.fuelRequired = "0.0";
     this.calcForm = new FormGroup({
-      lapTime: new FormControl("", [Validators.required, Validators.minLength(1)]),
       fuelRate: new FormControl("", [Validators.required, Validators.minLength(1)]),
-      totalTime: new FormControl("", [Validators.required, Validators.minLength(1)]),
+      totalLaps: new FormControl("", [Validators.required, Validators.minLength(1)]),
       additionalLaps: new FormControl("", [Validators.required, Validators.minLength(1)]),
-    });
+    })
   }
   
   onClickSubmit(data) {
     console.log(((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + 1) * parseFloat(data.fuelRate)).toFixed(1));
-    this.fuelRequired = ((((parseFloat(data.totalTime)*60)/parseFloat(data.lapTime)) + parseFloat(data.additionalLaps)) * parseFloat(data.fuelRate)).toFixed(1);
+    this.fuelRequired = (((parseFloat(data.totalLaps)) + parseFloat(data.additionalLaps)) * parseFloat(data.fuelRate)).toFixed(1);
   }
 
   toggle(){
-    setTimeout(()=>this.router.navigateByUrl("/lap"), 400);
+    setTimeout(()=>this.router.navigateByUrl(""), 400);
   }
 }

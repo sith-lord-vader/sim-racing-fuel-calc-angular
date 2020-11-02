@@ -3,7 +3,7 @@
         Time Based Race
         <span style="display: inline-block; text-align: left; margin-left: 0.5rem; margin-right: 0.5rem;">
         <div class="material-switch pull-right">
-            <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" ngTrueValue="switchToggledOn()" ngFalseValue="switchToggledOff()"/>
+            <input id="someSwitchOptionSuccess" name="someSwitchOption001" checked="true" type="checkbox"/>
             <label for="someSwitchOptionSuccess" class="btn-success"></label>
         </div>
         </span>
@@ -13,16 +13,12 @@
 <div>
     <form [formGroup]="calcForm" (ngSubmit) = "onClickSubmit(calcForm.value)">
         <div class="form-group">
-            <label for="lapTime"><i class="fa fas fa-stopwatch" style="margin-right: 1rem;"></i>Lap Time in Seconds</label>
-            <input type="number" class="form-control" step="0.1" id="lapTime" required name="lapTime" placeholder="Lap Time (s)"  formControlName="lapTime">
-        </div>
-        <div class="form-group">
             <label for="fuelRate"><i class="fa fas fa-tint" style="margin-right: 1rem;"></i>Fuel Consumption Rate in Litres per Lap</label>
             <input type="number" class="form-control" step="0.1" id="fuelRate" required name="fuelRate" placeholder="Fuel Rate (L/lap)"  formControlName="fuelRate">
         </div>
         <div class="form-group">
-            <label for="totalTime"><i class="fa fas fa-flag-checkered" style="margin-right: 1rem;"></i>Total Race Time in Minutes</label>
-            <input type="number" class="form-control" step="0.1" id="totalTime" required name="totalTime" placeholder="Total Time (mins)"  formControlName="totalTime">
+            <label for="totalLaps"><i class="fa fas fa-flag-checkered" style="margin-right: 1rem;"></i>Total Number of Laps in the Race</label>
+            <input type="number" class="form-control" step="1" id="totalLaps" required name="totalLaps" placeholder="Total Laps"  formControlName="totalLaps">
         </div>
         <div class="form-group">
             <label for="additionalLaps"><i class="fa fas fa-plus" style="margin-right: 1rem;"></i>Additional Laps for Backup Fuel</label>
@@ -33,4 +29,4 @@
         </div>
        <button type="submit" class="btn btn-primary btn-aqua" style="font-size: 1rem;"><i class="fa fas fa-calculator" style="margin-right: 1rem;"></i>Do the math!</button>
     </form>
- </div>
+</div>
